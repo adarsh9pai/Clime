@@ -31,7 +31,15 @@ var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=im
 var json_owm;
 request(url_owm,(error,response,body)=>{
      json_owm=JSON.parse(body);
-     res.render("results",{weather:json_owm.name});
+     res.render("results",
+     {  name: json_owm.name,
+        temperature:json_owm.main.temp,
+        pressure:json_owm.main.pressure,
+        humidity:json_owm.main.humidity,
+        sea_level:json_owm.main.sea_level,
+        grnd_level:json_owm.main.grnd_level,
+        weather_main:json_owm.weather.main,
+        weather_description:json_owm.weather.description});
      console.log(json_owm);   
     
 });

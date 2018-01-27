@@ -6,14 +6,39 @@ const
 
 const port=process.env.PORT||3000;
 
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
+
 app.set('view engine','ejs');
 
 app.listen(port,()=>{
 console.log('Listening on Port 3000');
 });
 
+
+
 app.get('/',(req,res)=>{
     res.render("index");
 });
+
+
+
+app.post('/',(req,res)=>{
+// Start of OpenWeatherApp API     
+var city=req.body.cityInput;
+const key="2e9575cfb013aac06605e69d9a75d378";
+var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
+var json_owm;
+request(url_owm,(error,response,body)=>{
+     json_owm=JSON.parse(body);
+     res.render("results",{weather:json_owm.name});
+     console.log(json_owm);   
+    
+});
+//End of OpenWeatherApp API
+
+});
+
+
+
+

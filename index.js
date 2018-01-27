@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
 
 app.post('/',(req,res)=>{
 // Start of OpenWeatherApp API     
-var city=req.body.cityInput;
+city=req.body.cityInput;
 const key="2e9575cfb013aac06605e69d9a75d378";
 var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
 var json_owm;
@@ -45,8 +45,18 @@ request(url_owm,(error,response,body)=>{
 });
 //End of OpenWeatherApp API
 
+//Start of News API
+var news_json='';
+const news_url='https://newsapi.org/v2/top-headlines?'+`q=${city} natural disaster&`+'sortBy=popularity&' +'apiKey=122bddc297ee4003b02b398840728704';
+request(news_url,function(error,request,body){
+    news_json=JSON.parse(body);
+    console.log(news_json);
 });
 
+
+
+//End of News API
+});
 
 
 

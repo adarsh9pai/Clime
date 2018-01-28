@@ -103,17 +103,19 @@ const
               case "weather":
               cityMessage(senderId);
               break;
-              case "emergency-call":
+              case "emergency":
               setCall(senderId);
+              sendMessage(senderId,{text:"Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"});
+              sendMessage(senderId,{text:"Storm Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me"});
               break;
               case "bank":
-              sendMessage(senderID,{text:"<a>"});
+              sendMessage(senderId,{text:"ATMs Near You: https://www.google.com/maps/search/atms+near+me"});
               break;
               case "donate":
               setDonate(senderId);
               break;
               case "call":
-              sendMessage(senderId, {text: '911'});
+              sendMessage(senderId, {text: 'Call Emergency Services on 911'});
                 break;
 
               default:
@@ -165,7 +167,7 @@ const
         var json_owm;
         request(url_owm,(error,response,body)=>{
             json_owm=JSON.parse(body);
-            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n Coordinates: "+json_owm.coord.lat+" "+json_owm.coord.lon;
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n Coordinates: "+json_owm.coord.lat+", "+json_owm.coord.lon;
             sendMessage(ID,{text:string});
            
        });
@@ -207,5 +209,5 @@ const
               }
             }
           };
-          sendMessage(ID, message);
+        sendMessage(ID, message);
      }

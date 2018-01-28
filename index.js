@@ -199,8 +199,22 @@ const
                   sendMessage(senderId,{text:message});
               break;
 
+              //check
             case "atm near me":
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+              var message ={
+                "type": "catalogue",
+                "msgid": "6rty",
+                "items": [{
+                    "title": "Gray T Shirt",
+                    "imgurl": "http://ecx.images-amazon.com/images/I/819Cirp6kPL._UL1500_.jpg",
+                    "options": [{
+                        "type": "url",
+                        "title": "view more",
+                        "url": "http://www.amazon.in/Gritstones-Hooded-T-Shirt-GS60210CWLGMEL-_Grey_Large/dp/B00OXR17OE/ref=sr_1_6",
+                        "webview_height_ratio": "compact"
+                    }]
+                }]
+            }
                   sendMessage(senderId,{text:message});
               break;
 
@@ -277,3 +291,5 @@ const
      {
          sendMessage(ID,{text:"Enter Latitude and Longitude"});
      }
+
+     function()

@@ -165,12 +165,8 @@ const
                  
                   buttons: [{
                     type: "postback",
-                    title: "Yes",
-                    payload: "Correct"
-                  }, {
-                    type: "postback",
-                    title: "No",
-                    payload: "Incorrect"
+                    title: "Call",
+                    payload: "+1 682 551 2698"
                   }]
                 }]
               }

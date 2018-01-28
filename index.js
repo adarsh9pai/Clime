@@ -115,6 +115,7 @@ const
               default:
              sendMessage(senderId,{text:"Send Location(City)"});
              processMessage_2(event);
+             break;
                 
             }
           } else if (message.attachments) {
@@ -136,14 +137,8 @@ const
             console.log(fMsg);
             switch (fMsg) {
              
-              case "donate":
-              setDonate(senderId);
-              break;
-              case "call":
-              sendMessage(senderId, {text: "Me Me Big Boi"});
-                break;
               default:
-             sendMessage(senderId,{text:"Me Me big boi"});
+             sendMessage(senderId,{text:"fMsg"});
                 
             }
           } else if (message.attachments) {

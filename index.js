@@ -104,7 +104,7 @@ const
               cityMessage(senderId);
               break;
               case "emergency":
-              sendMessage(senderId, {text: "Emergency services can be called by dialling 6825512698"});
+              sendMessage(senderId, {text: "Emergency services 6825512698"});
               break;
               case "bank":
               cityMessage(senderId);
@@ -149,10 +149,34 @@ const
           }
         }
       }
-
+      
+      
 
      function setDonate(ID){
          sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
+         var message = {
+            attachment: {
+              type: "template",
+              payload: {
+                template_type: "generic",
+                elements: [{
+                  title: "Hello",
+                    subtitle: "Is this the movie you are looking for?",
+                 
+                  buttons: [{
+                    type: "postback",
+                    title: "Yes",
+                    payload: "Correct"
+                  }, {
+                    type: "postback",
+                    title: "No",
+                    payload: "Incorrect"
+                  }]
+                }]
+              }
+            }
+          };
+          sendMessage(ID, message);
      }
 
      function findWeather(fMsg,ID)
@@ -163,7 +187,7 @@ const
         var json_owm;
         request(url_owm,(error,response,body)=>{
             json_owm=JSON.parse(body);
-            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n"+json_owm.coord.lat+" "+json_owm.coord.lon;
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n Coordinates: "+json_owm.coord.lat+" "+json_owm.coord.lon;
             sendMessage(ID,{text:string});
            
        });

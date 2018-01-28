@@ -212,8 +212,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "movieObj.Title",
-                      subtitle: "Is this the movie you are looking for?",
+                      title: "test",
+                      subtitle: "test?",
                       buttons: [{
                         type: "postback",
                         title: "Yes",
@@ -304,4 +304,3 @@ const
          sendMessage(ID,{text:"Enter Latitude and Longitude"});
      }
 
-     function()

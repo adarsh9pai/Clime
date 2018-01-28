@@ -128,10 +128,11 @@ const
                       payload: {
                         template_type: "generic",
                         elements: [{
-                          title: ".",
-                          subtitle: "Is this the movie you are looking for?",
+                          title: "Want to search for ATMs near you?",
+                          subtitle: "",
                           buttons: [{
-                            type: "postback",
+                            type: "web_url",
+                            url:"https://www.google.com/maps/search/atms+near+me",
                             title: "Yes",
                             payload: "Correct"
                           }, {

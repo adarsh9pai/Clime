@@ -71,10 +71,10 @@ const
           } else if (payload === "Incorrect") {
             sendMessage(senderId, {text: "Oops! Sorry about that. "});
           }else if (payload === "Hospitals") {
-            var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitalss+near+me'
+            var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitals+near+me'
                   sendMessage(senderId,{text:message});
           } else if (payload === "Shelters") {
-                var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitalss+near+me'
+                var message ='Hospitals Near You: https://www.google.com/maps/search/Shelters+near+me'
                       sendMessage(senderId,{text:message});
           }
       }

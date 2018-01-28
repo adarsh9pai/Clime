@@ -6,24 +6,21 @@ const
     mongoose=require("mongoose")
     app=express();
 
-const port=process.env.PORT||3000;
+    app.use(bodyParser.urlencoded({extended: false}));
+    app.use(bodyParser.json());
+    app.listen((process.env.PORT || 5000));
+    
 
-app.use(bodyParser,urlencoded({extended:true}));
-app.use(bodyParser.json());
-app.listen(port,()=>{
-
-});
-
-app.get('/',(req,res)=>{
-    res.send("Deployment Done");
-});
-
-app.get("/webhook",(req, res)=>{
-    if (req.query["hub.verify_token"] === process.env.VERIFICATION_TOKEN) {
+    app.get("/",(req, res)=> {
+      res.send("Deployement Done");
+    });
+    
+    app.get("/webhook", (req, res)=>{
+      if (req.query["hub.verify_token"] === "this_is_my_token") {
         console.log("Verified webhook");
         res.status(200).send(req.query["hub.challenge"]);
-    } else {
+      } else {
         console.error("Verification failed. The tokens do not match.");
         res.sendStatus(403);
-    }
-});
+      }
+    });

@@ -100,27 +100,28 @@ const
             var fMsg = message.text.toLowerCase().trim();
             console.log(fMsg);
             switch (fMsg) {
+                /*
                 case "give me the weather":  
                 cityMessage(senderId);
               break;
                 case "weather":
               cityMessage(senderId);
               break;
-              case "hospitals near me":  
+                case "hospitals near me":  
                 case "shelters near me":
                 case "help":
                 case "i am injured":
                 case "i need help":
-              case "emergency":
+                case "emergency":
               var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
               sendMessage(senderId, {text:text});
               break;
               case "bank":
               case "bank near me":  
-                case "atm near me":
-                case "need money":
-                case "banks near me":
-                case "atms near me":
+              case "atm near me":
+              case "need money":
+              case "banks near me":
+              case "atms near me":
                  var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               
@@ -138,10 +139,96 @@ const
               case "Emergency Call":
               sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
                 break;
+             */
+            case "give me the weather":  
+                cityMessage(senderId);
+              break;
+                case "weather":
+              cityMessage(senderId);
+              break;
+           
+        
+              case "donate":
+              setDonate(senderId);
+              break;
+              case "i want to donate":
+              setDonate(senderId);
+              break;
+              case "i want to help":
+              setDonate(senderId);
+              break;
+
+              case "hospitals near me":
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;  
+              case "shelters near me":
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;
+              case "help":
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;
+              case "i am injured":
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;
+              case "i need help":
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;
+              case "emergency":
+            var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+            sendMessage(senderId, {text:text});
+            break;
+
+
+              case "911":
+              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
+                break;  
+              case "call":
+              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
+                break;  
+              case "Emergency Call":
+              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
+                break;  
+
+                case "bank":
+                var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
+              case "bank near me":  
+              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
+              case "atm near me":
+              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
+              case "need money":
+              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
+              case "banks near me":
+              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
+              case "atms near me":
+                 var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId, message);
+              break;
+
 
               default:
              processMessage_2(event);
              break;
+
                 
             }
           } else if (message.attachments) {

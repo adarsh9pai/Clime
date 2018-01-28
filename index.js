@@ -184,16 +184,11 @@ const
             break;
 
 
-              case "911":
+            case "call":
               sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
-                break;  
-              case "call":
-              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
-                break;  
-              case "Emergency Call":
-              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
-                break;  
-
+            break;  
+              
+           /*
                 case "bank":
                 var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
@@ -228,7 +223,7 @@ const
               default:
              processMessage_2(event);
              break;
-
+            */
                 
             }
           } else if (message.attachments) {

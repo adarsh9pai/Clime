@@ -139,7 +139,7 @@ const
             switch (fMsg) {
              
               default:
-             sendMessage(senderId,{text:fMsg});
+             findWeather(fMsg,senderId);
                 
             }
           } else if (message.attachments) {
@@ -153,8 +153,21 @@ const
          sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
      }
 
-     function findWeather(fMsg)
+     function findWeather(fMsg,ID)
      {
+        var city=fMsg;
+        const key="2e9575cfb013aac06605e69d9a75d378";
+        var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
+        var json_owm;
+        request(url_owm,(error,response,body)=>{
+            json_owm=JSON.parse(body);
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather.main+"("+json_owm.weather.description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure;
+            sendMessage(ID,{text:string});
+           
+       });
+       
+       
+    
 
      }     
      

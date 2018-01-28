@@ -200,21 +200,30 @@ const
               break;
 
               //check
-            case "atm near me":
-              var message ={
-                "type": "catalogue",
-                "msgid": "6rty",
-                "items": [{
-                    "title": "Gray T Shirt",
-                    "options": [{
-                        "type": "url",
-                        "title": "view more",
-                        "url": "https://www.google.com/maps/search/atms+near+me",
-                        "webview_height_ratio": "compact"
+            case "hi":
+            message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: movieObj.Title,
+                      subtitle: "Is this the movie you are looking for?",
+                      image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
+                      buttons: [{
+                        type: "postback",
+                        title: "Yes",
+                        payload: "ATM"
+                      }, {
+                        type: "postback",
+                        title: "No",
+                        payload: "Incorrect"
+                      }]
                     }]
-                }]
-            }
-                  sendMessage(senderId,{text:message});
+                  }
+                }
+              };sendMessage(senderId,{text:message});
+                
               break;
 
 

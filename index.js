@@ -158,13 +158,13 @@ const
             attachment: {
               type: "template",
               payload: {
-                template_type: "generic",
+                template_type: "button",
                 elements: [{
-                  title: "Hello",
-                    subtitle: "Is this the movie you are looking for?",
+                  title: "Call Emergency Services",
+                    subtitle: "Do you require urgent attention?",
                  
                   buttons: [{
-                    type: "postback",
+                    type: "phone_number",
                     title: "Call",
                     payload: "+16825512698"
                   }]

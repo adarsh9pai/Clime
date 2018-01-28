@@ -101,10 +101,12 @@ const
             console.log(fMsg);
             switch (fMsg) {
               case "weather":
+              cityMessage(senderId);
               break;
               case "emergency":
               break;
               case "bank":
+              cityMessage(senderId);
               break;
               case "donate":
               setDonate(senderId);
@@ -151,4 +153,12 @@ const
          sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
      }
 
+     function findWeather(fMsg)
+     {
+
+     }     
      
+     function cityMessage(ID)
+     {
+         sendMessage(ID,{text:"Enter Location"});
+     }

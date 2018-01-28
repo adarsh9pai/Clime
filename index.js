@@ -104,11 +104,11 @@ const
               cityMessage(senderId);
               break;
               case "emergency":
-              var text="Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"+"\n"+"Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me";
+              var text=' <a href="https://www.google.com/maps/search/hospitals+near+me">Hospitals Near You</a>'+"\n"+' <a href="https://www.google.com/maps/search/storm+shelters+near+me">Hospitals Near You</a>';
               sendMessage(senderId, {text:text});
               break;
               case "bank":
-              var text="ATMs Near You: https://www.google.com/maps/search/ATMs+near+me";
+              var text=' <a href="https://www.google.com/maps/search/ATMs+near+me">ATMs Near You</a>';
               sendMessage(senderId, {text:text});
               break;
               case "donate":

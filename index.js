@@ -228,7 +228,7 @@ const
                   }
                 }
               };
-              sendMessage(senderId,{text:message});
+              sendMessage(senderId,message);
               break; 
 
 

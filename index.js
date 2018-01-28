@@ -66,7 +66,8 @@ const
             sendMessage(senderId, {text: message});
           });
         }else if (payload === "ATM") {
-            sendMessage(senderId, {text: "ABC."});
+            var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId,{text:message});
           } else if (payload === "Incorrect") {
             sendMessage(senderId, {text: "Oops! Sorry about that. "});
           }
@@ -194,20 +195,81 @@ const
               
 
              case "bank":
-                var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId,{text:message});
-              break;
+             message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "Do you want to look for ATMs?",
+                      subtitle: "?",
+                      buttons: [{
+                        type: "postback",
+                        title: "Yes",
+                        payload: "ATM"
+                      }, {
+                        type: "postback",
+                        title: "No",
+                        payload: "Incorrect"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
 
             case "bank near me":  
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId,{text:message});
-              break;
+            message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "Do you want to look for ATMs?",
+                      subtitle: "?",
+                      buttons: [{
+                        type: "postback",
+                        title: "Yes",
+                        payload: "ATM"
+                      }, {
+                        type: "postback",
+                        title: "No",
+                        payload: "Incorrect"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
 
               //
             case "atm near me":
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId,{text:message});
-              break;
+              
+            message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "Do you want to look for ATMs?",
+                      subtitle: "?",
+                      buttons: [{
+                        type: "postback",
+                        title: "Yes",
+                        payload: "ATM"
+                      }, {
+                        type: "postback",
+                        title: "No",
+                        payload: "Incorrect"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
 
              case "debug":
              message = {
@@ -216,8 +278,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "test",
-                      subtitle: "test?",
+                      title: "Do you want to look for ATMs?",
+                      subtitle: "?",
                       buttons: [{
                         type: "postback",
                         title: "Yes",

@@ -97,8 +97,9 @@ const
           console.log("Received message from : " + senderId);
           console.log("Message : " + JSON.stringify(message));
           if (message.text) {
-            var formattedMsg = message.text.toLowerCase().trim();
-            switch (formattedMsg) {
+            var fMsg = message.text.toLowerCase().trim();
+            console.log(fMsg);
+            switch (fMsg) {
               case "weather":
               case "emergency":
               case "bank":

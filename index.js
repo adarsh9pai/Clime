@@ -105,8 +105,8 @@ const
               case "bank":
               case "donate":
               case "call":
+              sendMessage(senderId, {text: "Me Me Big Boi"});
                 break;
-                sendMessage(senderId, {text: "Sorry, I don't understand your request."});
               default:
               sendMessage(senderId, {text: "Sorry, I don't understand your request."});
                 

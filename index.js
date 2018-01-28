@@ -70,6 +70,12 @@ const
                   sendMessage(senderId,{text:message});
           } else if (payload === "Incorrect") {
             sendMessage(senderId, {text: "Oops! Sorry about that. "});
+          }else if (payload === "Hospitals") {
+            var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitalss+near+me'
+                  sendMessage(senderId,{text:message});
+          } else if (payload === "Shelters") {
+                var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitalss+near+me'
+                      sendMessage(senderId,{text:message});
           }
       }
       
@@ -164,29 +170,127 @@ const
               break;
 
               case "hospitals near me":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
-            break;  
+              message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "What do you want to look for?",
+                      subtitle: "",
+                      buttons: [{
+                        type: "postback",
+                        title: "Hospitals",
+                        payload: "Hospitals"
+                      }, {
+                        type: "postback",
+                        title: "Shelters",
+                        payload: "Shelters"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
               case "shelters near me":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
+              message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "What do you want to look for?",
+                      subtitle: "",
+                      buttons: [{
+                        type: "postback",
+                        title: "Hospitals",
+                        payload: "Hospitals"
+                      }, {
+                        type: "postback",
+                        title: "Shelters",
+                        payload: "Shelters"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
             break;
               case "help":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
-            break;
+              message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "What do you want to look for?",
+                      subtitle: "",
+                      buttons: [{
+                        type: "postback",
+                        title: "Hospitals",
+                        payload: "Hospitals"
+                      }, {
+                        type: "postback",
+                        title: "Shelters",
+                        payload: "Shelters"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
               case "i am injured":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
-            break;
-              case "i need help":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
-            break;
+              message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "What do you want to look for?",
+                      subtitle: "",
+                      buttons: [{
+                        type: "postback",
+                        title: "Hospitals",
+                        payload: "Hospitals"
+                      }, {
+                        type: "postback",
+                        title: "Shelters",
+                        payload: "Shelters"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
+
               case "emergency":
-            var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
-            sendMessage(senderId, {text:text});
-            break;
+              message = {
+                attachment: {
+                  type: "template",
+                  payload: {
+                    template_type: "generic",
+                    elements: [{
+                      title: "What do you want to look for?",
+                      subtitle: "",
+                      buttons: [{
+                        type: "postback",
+                        title: "Hospitals",
+                        payload: "Hospitals"
+                      }, {
+                        type: "postback",
+                        title: "Shelters",
+                        payload: "Shelters"
+                      }]
+                    }]
+                  }
+                }
+              };
+              sendMessage(senderId,message);
+              break; 
 
 
             case "call":
@@ -201,8 +305,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "Do you want to look for ATMs?",
-                      subtitle: "?",
+                      title: "Do you want to look for ATMs near you?",
+                      subtitle: "",
                       buttons: [{
                         type: "postback",
                         title: "Yes",
@@ -226,8 +330,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "Do you want to look for ATMs?",
-                      subtitle: "?",
+                      title: "Do you want to look for ATMs near you?",
+                      subtitle: "",
                       buttons: [{
                         type: "postback",
                         title: "Yes",
@@ -253,8 +357,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "Do you want to look for ATMs?",
-                      subtitle: "?",
+                      title: "Do you want to look for ATMs near you?",
+                      subtitle: "",
                       buttons: [{
                         type: "postback",
                         title: "Yes",
@@ -278,8 +382,8 @@ const
                   payload: {
                     template_type: "generic",
                     elements: [{
-                      title: "Do you want to look for ATMs?",
-                      subtitle: "?",
+                      title: "Do you want to look for ATMs near you?",
+                      subtitle: "",
                       buttons: [{
                         type: "postback",
                         title: "Yes",

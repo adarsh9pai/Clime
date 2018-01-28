@@ -112,5 +112,8 @@ const
                  sendMessage(senderId,{text:"I'm so sorry! I'm not sure what I need to do."});  
               }
           }
+          else if(message.attachments){
+             sendMessage(senderId,{text:"I'm so sorry! I'm not sure what I need to do."});
+          }
 
       }

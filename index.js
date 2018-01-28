@@ -131,8 +131,7 @@ const
                           title: "Want to search for ATMs near you?",
                           subtitle: "",
                           buttons: [{
-                            type: "web_url",
-                            url:"https://www.google.com/maps/search/atms+near+me",
+                            type: "postback",
                             title: "Yes",
                             payload: "Correct"
                           }, {
@@ -151,6 +150,8 @@ const
               case "i want to donate":
               case "i want to help":
               setDonate(senderId);
+              break;
+              case "Yes":
               break;
               case "911":
               case "call":

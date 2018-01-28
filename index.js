@@ -121,5 +121,5 @@ const
 
 
      function setDonate(ID){
-         sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/"});
+         sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
      }

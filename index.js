@@ -104,12 +104,12 @@ const
               cityMessage(senderId);
               break;
               case "emergency":
-              setEmer(senderId);
+              setCall(senderId);
               sendMessage(senderId,{text:"Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"});
               sendMessage(senderId,{text:"Storm Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me"});
               break;
               case "bank":
-              sendMessage(senderId,{text:'ATMs Near You: <a href="https://www.google.com/maps/search/atms+near+me">ATMs near you.</a>'});
+              sendMessage(senderId,{text:"ATMs Near You: https://www.google.com/maps/search/atms+near+me"});
               break;
               case "donate":
               setDonate(senderId);
@@ -175,7 +175,7 @@ const
    
       
 
-     }     
+     }    
      
      function cityMessage(ID)
      {
@@ -187,25 +187,4 @@ const
          sendMessage(ID,{text:"Enter Latitude and Longitude"});
      }
 
-     function setEmer(ID){
-        sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
-       var message = {
-           attachment: {
-              type: "template",
-             payload: {
-               template_type: "generic",
-               elements: [{
-                 title: "Urgent Help?",
-                   subtitle: "Do you want to call 911?",
-                
-                  buttons: [{
-                   type: "postback",
-                   title: "Yes",
-                   payload: "Correct"
-                 }]
-               }]
-             }
-           }
-         };
-         sendMessage(ID, message);
-    }
+  

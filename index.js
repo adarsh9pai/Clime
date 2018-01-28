@@ -104,6 +104,8 @@ const
               case "emergency":
               case "bank":
               case "donate":
+              setDonate(senderId);
+              break;
               case "call":
               sendMessage(senderId, {text: "Me Me Big Boi"});
                 break;
@@ -116,3 +118,8 @@ const
           }
         }
       }
+
+
+     function setDonate(ID){
+         sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/"});
+     }

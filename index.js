@@ -104,25 +104,17 @@ const
             var fMsg = message.text.toLowerCase().trim();
             console.log(fMsg);
             switch (fMsg) {
-                case "give me the weather":  
-                case "gimme weather":
-                case "give me the weather details":
-                case "update weather":
                 case "weather":
               cityMessage(senderId);
               break;
-              case "hospitals near me":  
-                case "shelters near me":
-                case "help":
-                case "i am injured":
-                case "i need help":
+                case "help":    
                 var message={
                         attachment: {
                           type: "template",
                           payload: {
                             template_type: "generic",
                             elements: [{
-                              title:Help,
+                              title:"Help",
                               subtitle: "hp?",
                               buttons: [{
                                 "type":"web_url",
@@ -142,18 +134,13 @@ const
               sendMessage(senderId, {text:text});
               break;
               case "bank":
-              case "bank near me":  
-                case "atm near me":
-                case "need money":
-                case "banks near me":
-                case "atms near me":
+              
                  var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               
               break;
               case "donate":
-              case "i want to donate":
-              case "i want to help":
+              
               setDonate(senderId);
               break;
               case "Yes":

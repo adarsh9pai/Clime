@@ -103,17 +103,17 @@ const
               case "weather":
               cityMessage(senderId);
               break;
-              case "emergency":
-              sendMessage(senderId, {text: "Emergency services 6825512698"});
+              case "emergency-call":
+              setCall(senderId);
               break;
               case "bank":
-              cityMessage(senderId);
+              sendMessage(senderID,{text:"<a>"});
               break;
               case "donate":
               setDonate(senderId);
               break;
               case "call":
-              sendMessage(senderId, {text: 'Me Me Big Boi'});
+              sendMessage(senderId, {text: '911'});
                 break;
 
               default:
@@ -154,25 +154,7 @@ const
 
      function setDonate(ID){
          sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
-         var message = {
-            attachment: {
-              type: "template",
-              payload: {
-                template_type: "button",
-                elements: [{
-                  title: "Call Emergency Services",
-                    subtitle: "Do you require urgent attention?",
-                 
-                  buttons: [{
-                    type: "phone_number",
-                    title: "Call",
-                    payload: "+16825512698"
-                  }]
-                }]
-              }
-            }
-          };
-          sendMessage(ID, message);
+         
      }
 
      function findWeather(fMsg,ID)
@@ -204,4 +186,26 @@ const
      function atmMessage(ID)
      {
          sendMessage(ID,{text:"Enter Latitude and Longitude"});
+     }
+
+     function setCall(ID)
+     {
+        var message = {
+            attachment: {
+              type: "template",
+              payload: {
+                template_type: "button",
+                elements: [{
+                  title: "Call Emergency Services",
+                    
+                  buttons: [{
+                    type: "phone_number",
+                    title: "Call",
+                    payload: "+16825512698"
+                  }]
+                }]
+              }
+            }
+          };
+          sendMessage(ID, message);
      }

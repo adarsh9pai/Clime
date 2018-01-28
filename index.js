@@ -2,9 +2,12 @@ const
     express=require('express')
     bodyParser=require('body-parser')
     request=require('request')
+    twitter=require('twitter')
     app=express();
 
 const port=process.env.PORT||3000;
+
+
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
@@ -21,7 +24,7 @@ app.get('/',(req,res)=>{
     res.render("index");
 });
 
-
+const googmapskey="AIzaSyB9rqvlbBZ2YSQw0VQz65XszYuZNvdPiEI";
 
 app.post('/',(req,res)=>{
 // Start of OpenWeatherApp API     
@@ -36,11 +39,13 @@ request(url_owm,(error,response,body)=>{
         temperature:json_owm.main.temp,
         pressure:json_owm.main.pressure,
         humidity:json_owm.main.humidity,
-        sea_level:json_owm.main.sea_level,
-        grnd_level:json_owm.main.grnd_level,
-        weather_main:json_owm.weather.main,
-        weather_description:json_owm.weather.description});
+        main:json_owm.weather[0].main,
+    desc:json_owm.weather[0].description,
+    speed:json_owm.wind.speed,
+    lon:json_owm.coord.lon,
+    lat:json_owm.coord.lat});
      console.log(json_owm);   
+     console.log(Object.keys(json_owm.weather[0]));
     
 });
 //End of OpenWeatherApp API
@@ -57,6 +62,5 @@ request(news_url,function(error,request,body){
 
 //End of News API
 });
-
 
 

@@ -62,7 +62,7 @@ const
               name = bodyObj.first_name;
               greeting = "Hi " + name + ". ";
             }
-            var message = greeting + ", I'm Mr.Clime! How may I assist you today? \n - Weather Update \n - Donate funds \n - Look for the nearest Emergency Centers \n - Call Emergency Services";
+            var message = greeting + " I'm Mr.Clime! How may I assist you today? \n - Weather Update \n - Donate funds \n - Look for the nearest Emergency Centers \n - Call Emergency Services";
             sendMessage(senderId, {text: message});
           });
         }

@@ -102,7 +102,6 @@ const
             switch (fMsg) {
               case "weather":
               case "emergency":
-              break;
               case "bank":
               case "donate":
               setDonate(senderId);
@@ -111,7 +110,7 @@ const
               sendMessage(senderId, {text: "Me Me Big Boi"});
                 break;
               default:
-             findCityDetails(pin);
+             sendMessage(senderId,{text:"Send Location(City)"});
                 
             }
           } else if (message.attachments) {
@@ -125,18 +124,4 @@ const
          sendMessage(ID,{text:"You can donate to the American Red Cross @ http://www.redcross.org/donate/drtv"});
      }
 
-     var city;
-
-     function findCity(name)
-     {
-        city=name;
-     }
      
-
-var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;
-/*
-request(url_owm,(error,response,body)=>{
-     json_owm=JSON.parse(body);
-     res.render("results",{weather:json_owm.name});
-     console.log(json_owm);   
-     */

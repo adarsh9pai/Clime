@@ -31,6 +31,8 @@ const
                 entry.messaging.forEach(function(event) {
                   if (event.postback) {
                     processPostback(event);
+                  } else if(event.message){
+                      processMessage(event);
                   }
                 });
               });
@@ -84,5 +86,31 @@ const
               }
           }
         );
+
+      }
+
+      function processMessage(event){
+          if(!event.message.is_echo){
+              var message=event.message;
+              var senderId=event.sender.id;
+          }
+
+          console.log("Received message from "+senderId);
+          console.log("Message: "+JSON.stringify(message));
+
+          if(message.text){
+              var fMsg=message.text.toLowerCase().trim();
+              switch(fMsg){
+                  case "weather":
+                  case "donate":
+                  case "funds":
+                  case "emergency":
+                  case "center":
+                 sendMessage(senderId,{text:"debugging"});
+                  break;
+                  default:
+                 sendMessage(senderId,{text:"I'm so sorry! I'm not sure what I need to do."});  
+              }
+          }
 
       }

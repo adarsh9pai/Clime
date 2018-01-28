@@ -152,6 +152,7 @@ const
               setDonate(senderId);
               break;
               case "Yes":
+              sendMessage(senderId,{text:'ATMs Near You: https://www.google.com/maps/search/hospitals+near+me'});
               break;
               case "911":
               case "call":

@@ -89,31 +89,28 @@ const
 
       }
 
-      function processMessage(event){
-          if(!event.message.is_echo){
-              var message=event.message;
-              var senderId=event.sender.id;
+      function processMessage(event) {
+        if (!event.message.is_echo) {
+          var message = event.message;
+          var senderId = event.sender.id;
+      
+          console.log("Received message from : " + senderId);
+          console.log("Message : " + JSON.stringify(message));
+          if (message.text) {
+            var formattedMsg = message.text.toLowerCase().trim();
+            switch (formattedMsg) {
+              case "weather":
+              case "emergency":
+              case "bank":
+              case "donate":
+              case "call":
+                break;
+                sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+              default:
+                
+            }
+          } else if (message.attachments) {
+            sendMessage(senderId, {text: "Sorry, I don't understand your request."});
           }
-
-          console.log("Received message from "+senderId);
-          console.log("Message: "+JSON.stringify(message));
-
-          if(message.text){
-              var fMsg=message.text.toLowerCase().trim();
-              switch(fMsg){
-                  case "weather":
-                  case "donate":
-                  case "funds":
-                  case "emergency":
-                  case "center":
-                 sendMessage(senderId,{text:"debugging"});
-                  break;
-                  default:
-                 sendMessage(senderId,{text:"I'm so sorry! I'm not sure what I need to do."});  
-              }
-          }
-          else if(message.attachments){
-             sendMessage(senderId,{text:"I'm so sorry! I'm not sure what I need to do."});
-          }
-
+        }
       }

@@ -206,11 +206,10 @@ const
                 "msgid": "6rty",
                 "items": [{
                     "title": "Gray T Shirt",
-                    "imgurl": "http://ecx.images-amazon.com/images/I/819Cirp6kPL._UL1500_.jpg",
                     "options": [{
                         "type": "url",
                         "title": "view more",
-                        "url": "http://www.amazon.in/Gritstones-Hooded-T-Shirt-GS60210CWLGMEL-_Grey_Large/dp/B00OXR17OE/ref=sr_1_6",
+                        "url": "https://www.google.com/maps/search/atms+near+me",
                         "webview_height_ratio": "compact"
                     }]
                 }]

@@ -104,6 +104,7 @@ const
               cityMessage(senderId);
               break;
               case "emergency":
+              sendMessage(senderId, {text: "Emergency services can be called by dialling 6825512698"});
               break;
               case "bank":
               cityMessage(senderId);
@@ -112,8 +113,9 @@ const
               setDonate(senderId);
               break;
               case "call":
-              sendMessage(senderId, {text: "Me Me Big Boi"});
+              sendMessage(senderId, {text: 'Me Me Big Boi'});
                 break;
+
               default:
              processMessage_2(event);
              break;
@@ -161,17 +163,25 @@ const
         var json_owm;
         request(url_owm,(error,response,body)=>{
             json_owm=JSON.parse(body);
-            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa.";
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n"+json_owm.coord.lat+" "+json_owm.coord.lon;
             sendMessage(ID,{text:string});
            
        });
        
        
-    
+       function findATM(){
+
+           
+       }
 
      }     
      
      function cityMessage(ID)
      {
          sendMessage(ID,{text:"Enter Location"});
+     }
+
+     function atmMessage(ID)
+     {
+         sendMessage(ID,{text:"Enter Latitude and Longitude"});
      }

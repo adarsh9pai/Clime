@@ -104,7 +104,7 @@ const
               cityMessage(senderId);
               break;
               case "emergency":
-              setCall(senderId);
+              
               sendMessage(senderId,{text:"Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"});
               sendMessage(senderId,{text:"Storm Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me"});
               break;
@@ -182,9 +182,3 @@ const
          sendMessage(ID,{text:"Enter Location"});
      }
 
-     function atmMessage(ID)
-     {
-         sendMessage(ID,{text:"Enter Latitude and Longitude"});
-     }
-
-  

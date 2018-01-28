@@ -113,7 +113,6 @@ const
               sendMessage(senderId, {text: "Me Me Big Boi"});
                 break;
               default:
-             sendMessage(senderId,{text:"Send Location(City)"});
              processMessage_2(event);
              break;
                 
@@ -138,7 +137,7 @@ const
             switch (fMsg) {
              
               default:
-             sendMessage(senderId,{text:"fMsg"});
+             sendMessage(senderId,{text:fMsg});
                 
             }
           } else if (message.attachments) {

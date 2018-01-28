@@ -108,7 +108,37 @@ const
               sendMessage(senderId, {text:text});
               break;
               case "bank":
-              var text=' <a href="https://www.google.com/maps/search/ATMs+near+me">ATMs Near You</a>';
+              var text={
+                "recipient":{
+                  "id":"333333333"
+                },
+                "message":{
+                  "attachment":{
+                    "type":"template",
+                    "payload":{
+                      "template_type":"generic",
+                      "elements":[
+                         {
+                          "title":"Here is the link you asked for",
+                           "default_action": {
+                            "type": "web_url",
+                            "url": "https://www.facebook.com",
+                            "messenger_extensions": true,
+                            "fallback_url": "https://www.facebook.com/"
+                          },
+                          "buttons":[
+                            {
+                              "type":"web_url",
+                              "title": "open link",
+                              "url":"https://www.facebook.com"
+                            }              
+                          ]      
+                        }
+                      ]
+                    }
+                  }
+                }
+              };
               sendMessage(senderId, {text:text});
               break;
               case "donate":

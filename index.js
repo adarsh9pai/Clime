@@ -103,17 +103,20 @@ const
               case "weather":
               cityMessage(senderId);
               break;
+
               case "emergency":
-              
               sendMessage(senderId,{text:"Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"});
               sendMessage(senderId,{text:"Storm Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me"});
               break;
+
               case "bank":
               sendMessage(senderId,{text:"ATMs Near You: https://www.google.com/maps/search/atms+near+me"});
               break;
+
               case "donate":
               setDonate(senderId);
               break;
+              
               case "call":
               sendMessage(senderId, {text: 'Call Emergency Services on 911'});
                 break;

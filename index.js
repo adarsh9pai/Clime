@@ -200,32 +200,10 @@ const
               break;
 
               //check
-            case "hi":
-            message = {
-                attachment: {
-                  type: "template",
-                  payload: {
-                    template_type: "generic",
-                    elements: [{
-                      title: movieObj.Title,
-                      subtitle: "Is this the movie you are looking for?",
-                      image_url: movieObj.Poster === "N/A" ? "http://placehold.it/350x150" : movieObj.Poster,
-                      buttons: [{
-                        type: "postback",
-                        title: "Yes",
-                        payload: "ATM"
-                      }, {
-                        type: "postback",
-                        title: "No",
-                        payload: "Incorrect"
-                      }]
-                    }]
-                  }
-                }
-              };sendMessage(senderId,{text:message});
-                
+              case "atm near me":  
+              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
+                  sendMessage(senderId,{text:message});
               break;
-
 
               default:
              processMessage_2(event);

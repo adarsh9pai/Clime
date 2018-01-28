@@ -102,7 +102,7 @@ const
             switch (fMsg) {
               case "weather":
               case "emergency":
-              emergencyCall(ID);
+              break;
               case "bank":
               case "donate":
               setDonate(senderId);
@@ -131,32 +131,6 @@ const
      {
         city=name;
      }
-
-     function emergencyCall(ID) {
-       
-         
-          
-               
-                  message = {
-                    attachment: {
-                      type: "template",
-                      payload: {
-                        template_type: "generic",
-                        elements: [{
-                          title: "Call Emergency Services",
-                          subtitle: "Would you like to call 911?",
-                          buttons: [{
-                            type: "postback",
-                            title: "Yes",
-                            payload: "+1 6825512698"
-                          }]
-                        }]
-                      }
-                    }
-                  };
-                  sendMessage(ID, message);
-      }
-
      
 
 var url_owm = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${key}`;

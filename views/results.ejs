@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://use.fontawesome.com/143da8863c.js"></script>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Clime | Get Weather Reports and Statistics during Disasters</title>
@@ -10,11 +11,44 @@
 </head>
 <body>
 <div class="container-fluid">
+<div id="results">
+<div class="row">
+    <div class="col-md-6">
+    </br>       
+<div id="plate">
+</br>
+<h3><i class="fa fa-sun-o fa-1x" aria-hidden="true"></i> Weather in <%= name %></h3>
+<h1 style="font-family: 'Lato', sans-serif; margin-left:30px; display:inline;"><%=temperature%></h1><h5 style="display:inline;"></h5>
+</br>
+   <h4><strong><%=main%>, <%=desc%></strong></h4>
+    </br>
+    <h5 style="display:inline"><strong>Humidity: </strong><%=humidity%></h5> % </br>
+    <h5 style="display:inline"><strong>Pressure: </strong> <%=pressure%></h5> hPa </br>
+    <h5 style="display:inline"><strong>Wind Speed: </strong><%=speed%></h5> meter/sec 
+    <h5><strong>Coordinates: </strong><%=lat%> <%=lon%></h5>
+</div>
 
-<h1>
-    <%= weather %>
 
-</h1>
+
+
+</hr>
+<p></p>
+</div>
+    </div>
+    <div class="col-md-6">
+        
+     </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+                
+    </div>
+    
+</div>
+</div>
 
 </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -22,9 +56,38 @@
 </body>
 <style>
 
+@import url('https://fonts.googleapis.com/css?family=Raleway|Lato');
+
+html,body{
+    padding:0;
+    margin:0;
+    background-color: #f15c5c;
+    font-family: 'Raleway', sans-serif;
+}
+#plate{
+    width:90%;
+    height:50vh;
+    border-radius:20px;
+    background-color:white; 
+    margin-left:5%;
+}
+
+h3{
+    margin-left:30px;
+    
+}
+
+h5{
+    margin-left:30px;
+}
+    
+h4{
+    margin-left:30px;
+}    
 </style>
 
 <script>
+
 
 </script>
 </html>

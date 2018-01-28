@@ -166,7 +166,7 @@ const
                   buttons: [{
                     type: "postback",
                     title: "Call",
-                    payload: "+1 682 551 2698"
+                    payload: "+16825512698"
                   }]
                 }]
               }

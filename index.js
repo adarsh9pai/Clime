@@ -101,8 +101,11 @@ const
             console.log(fMsg);
             switch (fMsg) {
               case "weather":
+              break;
               case "emergency":
+              break;
               case "bank":
+              break;
               case "donate":
               setDonate(senderId);
               break;
@@ -111,6 +114,36 @@ const
                 break;
               default:
              sendMessage(senderId,{text:"Send Location(City)"});
+             processMessage_2(event);
+                
+            }
+          } else if (message.attachments) {
+            sendMessage(senderId, {text: "Sorry, I don't understand your request."});
+          }
+        }
+      }
+
+
+      function processMessage_2(event) {
+        if (!event.message.is_echo) {
+          var message = event.message;
+          var senderId = event.sender.id;
+      
+          console.log("Received message from : " + senderId);
+          console.log("Message : " + JSON.stringify(message));
+          if (message.text) {
+            var fMsg = message.text.toLowerCase().trim();
+            console.log(fMsg);
+            switch (fMsg) {
+             
+              case "donate":
+              setDonate(senderId);
+              break;
+              case "call":
+              sendMessage(senderId, {text: "Me Me Big Boi"});
+                break;
+              default:
+             sendMessage(senderId,{text:"Me Me big boi"});
                 
             }
           } else if (message.attachments) {

@@ -161,7 +161,7 @@ const
         var json_owm;
         request(url_owm,(error,response,body)=>{
             json_owm=JSON.parse(body);
-            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather.main+"("+json_owm.weather.description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure;
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa.";
             sendMessage(ID,{text:string});
            
        });

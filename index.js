@@ -143,7 +143,7 @@ const
                       }
                     }
                   };
-                  sendMessage(ID, message);
+                  sendMessage(senderId, message);
               
               break;
               case "donate":

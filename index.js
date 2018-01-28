@@ -74,7 +74,7 @@ const
             var message ='Hospitals Near You: https://www.google.com/maps/search/Hospitals+near+me'
                   sendMessage(senderId,{text:message});
           } else if (payload === "Shelters") {
-                var message ='Hospitals Near You: https://www.google.com/maps/search/Shelters+near+me'
+                var message ='Shelters Near You: https://www.google.com/maps/search/Shelters+near+me'
                       sendMessage(senderId,{text:message});
           }
       }

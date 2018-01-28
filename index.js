@@ -113,7 +113,7 @@ const
                 case "i am injured":
                 case "i need help":
               case "emergency":
-              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Hospitals Near You: https://www.google.com/maps/search/storm+shelters+near+me';
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
               sendMessage(senderId, {text:text});
               break;
               case "bank":
@@ -143,8 +143,8 @@ const
                       }
                     }
                   };
-                  sendMessage(userId, message);
-              sendMessage(senderId, {text:text});
+                  sendMessage(ID, message);
+              
               break;
               case "donate":
               case "i want to donate":

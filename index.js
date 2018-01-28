@@ -189,20 +189,10 @@ const
             break;  
               
 
-             case "bank":
-                var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
-
-            case "bank near me":  
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
-
-            case "atm near me":
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
+            case "bank":
+            var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me';
+                sendMessage(senderId, message);
+             break;
 
 
               default:

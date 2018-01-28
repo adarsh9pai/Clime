@@ -65,11 +65,7 @@ const
             var message = greeting + " I'm Mr.Clime! How may I assist you today? \n - Weather Update \n - Donate funds \n - Look for the nearest Emergency Centers \n - Call Emergency Services";
             sendMessage(senderId, {text: message});
           });
-        }else if (payload === "Correct") {
-            sendMessage(senderId, {text: "Poop"});
-          } else if (payload === "Incorrect") {
-            sendMessage(senderId, {text: "Tatti"});
-          }
+        }
       }
       
       function sendMessage(ID,msg){
@@ -104,43 +100,34 @@ const
             var fMsg = message.text.toLowerCase().trim();
             console.log(fMsg);
             switch (fMsg) {
+                case "give me the weather":  
+                cityMessage(senderId);
+              break;
                 case "weather":
               cityMessage(senderId);
               break;
-                case "help":    
-                var message={
-                        attachment: {
-                          type: "template",
-                          payload: {
-                            template_type: "generic",
-                            elements: [{
-                              title:"Help",
-                              subtitle: "hp?",
-                              buttons: [{
-                                "type":"web_url",
-                                "url":"https://petersfancyapparel.com/criteria_selector",
-                                "title":"Select Criteria",
-                                "webview_height_ratio": "compact"
-                              }]
-                            }]
-                          }
-                        }
-                      };
-                      sendMessage(userId, message);
-                
-                break;
+              case "hospitals near me":  
+                case "shelters near me":
+                case "help":
+                case "i am injured":
+                case "i need help":
               case "emergency":
               var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';
               sendMessage(senderId, {text:text});
               break;
               case "bank":
-              
+              case "bank near me":  
+                case "atm near me":
+                case "need money":
+                case "banks near me":
+                case "atms near me":
                  var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               
               break;
               case "donate":
-              
+              case "i want to donate":
+              case "i want to help":
               setDonate(senderId);
               break;
               case "Yes":

@@ -116,8 +116,7 @@ const
                 case "help":
                 case "i am injured":
                 case "i need help":
-                var message={
-                    message = {
+                var message{
                         attachment: {
                           type: "template",
                           payload: {

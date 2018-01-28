@@ -116,7 +116,7 @@ const
                 case "help":
                 case "i am injured":
                 case "i need help":
-                var message{
+                var message={
                         attachment: {
                           type: "template",
                           payload: {
@@ -135,7 +135,7 @@ const
                         }
                       };
                       sendMessage(userId, message);
-                }
+                
                 break;
               case "emergency":
               var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me';

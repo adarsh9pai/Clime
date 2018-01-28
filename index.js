@@ -65,7 +65,11 @@ const
             var message = greeting + " I'm Mr.Clime! How may I assist you today? \n - Weather Update \n - Donate funds \n - Look for the nearest Emergency Centers \n - Call Emergency Services";
             sendMessage(senderId, {text: message});
           });
-        }
+        }else if (payload === "ATM") {
+            sendMessage(senderId, {text: "ABC."});
+          } else if (payload === "Incorrect") {
+            sendMessage(senderId, {text: "Oops! Sorry about that. "});
+          }
       }
       
       function sendMessage(ID,msg){
@@ -217,7 +221,7 @@ const
                       buttons: [{
                         type: "postback",
                         title: "Yes",
-                        payload: "Correct"
+                        payload: "ATM"
                       }, {
                         type: "postback",
                         title: "No",

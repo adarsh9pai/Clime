@@ -188,34 +188,19 @@ const
               sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
             break;  
               
-           /*
-                case "bank":
+
+             case "bank":
                 var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               break;
 
-              case "bank near me":  
+            case "bank near me":  
               var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               break;
 
-              case "atm near me":
+            case "atm near me":
               var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
-
-              case "need money":
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
-
-              case "banks near me":
-              var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
-                  sendMessage(senderId, message);
-              break;
-
-              case "atms near me":
-                 var message ='ATMs Near You: https://www.google.com/maps/search/ATMs+near+me'
                   sendMessage(senderId, message);
               break;
 
@@ -223,7 +208,7 @@ const
               default:
              processMessage_2(event);
              break;
-            */
+
                 
             }
           } else if (message.attachments) {

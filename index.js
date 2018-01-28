@@ -292,4 +292,3 @@ const
          sendMessage(ID,{text:"Enter Latitude and Longitude"});
      }
 
-     function()

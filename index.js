@@ -107,6 +107,7 @@ const
                 break;
                 sendMessage(senderId, {text: "Sorry, I don't understand your request."});
               default:
+              sendMessage(senderId, {text: "Sorry, I don't understand your request."});
                 
             }
           } else if (message.attachments) {

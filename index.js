@@ -100,52 +100,61 @@ const
             var fMsg = message.text.toLowerCase().trim();
             console.log(fMsg);
             switch (fMsg) {
-              case "weather":
+                case "give me the weather":  
+                case "gimme weather":
+                case "give me the weather details":
+                case "update weather":
+                case "weather":
               cityMessage(senderId);
               break;
+              case "hospitals near me":  
+                case "shelters near me":
+                case "help":
+                case "i am injured":
+                case "i need help":
               case "emergency":
-              var text=' <a href="https://www.google.com/maps/search/hospitals+near+me">Hospitals Near You</a>'+"\n"+' <a href="https://www.google.com/maps/search/storm+shelters+near+me">Hospitals Near You</a>';
+              var text='Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me'+"\n\n"+' Hospitals Near You: https://www.google.com/maps/search/storm+shelters+near+me';
               sendMessage(senderId, {text:text});
               break;
               case "bank":
-              var text={
-                "recipient":{
-                  "id":"333333333"
-                },
-                "message":{
-                  "attachment":{
-                    "type":"template",
-                    "payload":{
-                      "template_type":"generic",
-                      "elements":[
-                         {
-                          "title":"Here is the link you asked for",
-                           "default_action": {
-                            "type": "web_url",
-                            "url": "https://www.facebook.com",
-                            "messenger_extensions": true,
-                            "fallback_url": "https://www.facebook.com/"
-                          },
-                          "buttons":[
-                            {
-                              "type":"web_url",
-                              "title": "open link",
-                              "url":"https://www.facebook.com"
-                            }              
-                          ]      
-                        }
-                      ]
+              case "bank near me":  
+                case "atm near me":
+                case "need money":
+                case "banks near me":
+                case "atms near me":
+                 var message = {
+                    attachment: {
+                      type: "template",
+                      payload: {
+                        template_type: "generic",
+                        elements: [{
+                          title: ".",
+                          subtitle: "Is this the movie you are looking for?",
+                          buttons: [{
+                            type: "postback",
+                            title: "Yes",
+                            payload: "Correct"
+                          }, {
+                            type: "postback",
+                            title: "No",
+                            payload: "Incorrect"
+                          }]
+                        }]
+                      }
                     }
-                  }
-                }
-              };
+                  };
+                  sendMessage(userId, message);
               sendMessage(senderId, {text:text});
               break;
               case "donate":
+              case "i want to donate":
+              case "i want to help":
               setDonate(senderId);
               break;
+              case "911":
               case "call":
-              sendMessage(senderId, {text: '911'});
+              case "Emergency Call":
+              sendMessage(senderId, {text: 'If in serious emergency, dial +911'});
                 break;
 
               default:

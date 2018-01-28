@@ -19,7 +19,7 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/webhook',(req,res)=>{
-    if(req.query["hub.verify_token"]===""){
+    if(req.query["hub.verify_token"]===(process.env.VERIFICATION_TOKEN)){
     console.log("Webhook Verified");
     res.status(200).send(req.query["hub.challenge"]);
     }

@@ -103,22 +103,17 @@ const
               case "weather":
               cityMessage(senderId);
               break;
-
               case "emergency":
-              sendMessage(senderId,{text:"Hospitals Near You: https://www.google.com/maps/search/hospitals+near+me"});
-              sendMessage(senderId,{text:"Storm Shelters Near You: https://www.google.com/maps/search/storm+shelters+near+me"});
+              sendMessage(senderId, {text: "Emergency services 6825512698"});
               break;
-
               case "bank":
-              sendMessage(senderId,{text:"ATMs Near You: https://www.google.com/maps/search/atms+near+me"});
+              cityMessage(senderId);
               break;
-
               case "donate":
               setDonate(senderId);
               break;
-              
               case "call":
-              sendMessage(senderId, {text: 'Call Emergency Services on 911'});
+              sendMessage(senderId, {text: '911'});
                 break;
 
               default:
@@ -170,18 +165,25 @@ const
         var json_owm;
         request(url_owm,(error,response,body)=>{
             json_owm=JSON.parse(body);
-            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n Coordinates: "+json_owm.coord.lat+", "+json_owm.coord.lon;
+            var string="It is "+json_owm.main.temp+" F with "+json_owm.weather[0].main+"("+json_owm.weather[0].description+"). Humidity: "+json_owm.main.humidity+"% and Pressure: "+json_owm.main.pressure+" Pa."+"\n Coordinates: "+json_owm.coord.lat+" "+json_owm.coord.lon;
             sendMessage(ID,{text:string});
            
        });
        
-   
-      
+       
+       function findATM(){
 
-     }    
+           
+       }
+
+     }     
      
      function cityMessage(ID)
      {
          sendMessage(ID,{text:"Enter Location"});
      }
 
+     function atmMessage(ID)
+     {
+         sendMessage(ID,{text:"Enter Latitude and Longitude"});
+     }
